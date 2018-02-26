@@ -37,6 +37,21 @@ describe('App', () => {
   })
 
   /*
+  * Test by comparing the children
+  */
+  it('contains everything else that gets rendered', () => {
+    const output = mount(
+      <App />
+    )
+    const divs = output.find('div')
+    // Outermost div is first on the list
+    const outermostDiv = divs.first()
+    // console.log(outermostDiv.children().getElements())
+    // console.log(output.children().children().getElements())
+    expect(outermostDiv.children()).toEqual(output.children().children())
+  })
+
+  /*
   *   Test when state changes with standard event
   */
   it('changes the state when button is clicked', () => {
