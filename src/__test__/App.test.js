@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
 import App from '../App';
 
@@ -23,6 +23,17 @@ describe('App', () => {
       <App />
     )
     expect(shallowToJson(output)).toMatchSnapshot()
+  })
+
+  /*
+  * Test by rendering through mounting
+  */
+  it('always renders a div', () => {
+    const output = mount(
+      <App />
+    )
+    const divs = output.find('div')
+    expect(divs.length).toBeGreaterThan(0)
   })
 
   /*
@@ -50,5 +61,4 @@ describe('App', () => {
     // After click
     expect(output.state().clicked).toEqual(true)
   })
-
 })
