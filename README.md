@@ -8,6 +8,10 @@
 - converts Enzyme wrappers for Jest snapshot matcher
 `yarn add --dev enzyme-to-json`
 
+## Install Sinon
+- Standalone test spies, stubs and mocks for JavaScript. 
+`yarn add --dev sinon`
+
 ## Setup file `src\setupTests.js`
 ```javascript
 // setup file
@@ -92,6 +96,18 @@ it('calls a function when clicked', () => {
   )
   output.find('div').simulate('click')
   expect(doSomethingCool).toHaveBeenCalledTimes(1)
+})
+```
+
+### Test simulated click events
+```javascript
+it('simulates click events', () => {
+  const onLinkClick = sinon.spy()
+  const output = shallow(
+    <Link title="mockTitle" url="mockUrl" onLinkClick={onLinkClick} />
+  )
+  output.simulate('click')
+  expect(onLinkClick.calledOnce).toEqual(true)
 })
 ```
 
