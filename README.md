@@ -49,16 +49,16 @@ it('renders the link inside the output area', () => {
 ### Test by expecting exact html
 ```javascript
 it('renders the Link output area', () => {
-const output = shallow(<Link title='Google' url='http://www.google.com'/>)
-const expected =
-  '<div class="output-area">' +
-  '<h2>A link to Google</h2>' +
-  '<a href="http://www.google.com">'+
-  'Google' +
-  '</a>' +
-  '</div>'
-const result = output.find('div.output-area').html()
-expect(result.indexOf(expected) > -1).toEqual(true)
+  const output = shallow(<Link title='Google' url='http://www.google.com'/>)
+  const expected =
+    '<div class="output-area">' +
+    '<h2>A link to Google</h2>' +
+    '<a href="http://www.google.com">'+
+    'Google' +
+    '</a>' +
+    '</div>'
+  const result = output.find('div.output-area').html()
+  expect(result.indexOf(expected) > -1).toEqual(true)
 })
 ```
 
