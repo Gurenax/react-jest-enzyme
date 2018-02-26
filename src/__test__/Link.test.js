@@ -1,6 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
+import sinon from 'sinon'
 
 import Link from '../components/Link'
 
@@ -77,8 +78,19 @@ describe('Link', () => {
         doSomethingCool()
       }} />
     )
-    output.find('div').simulate('click')
+    output.simulate('click')
     expect(doSomethingCool).toHaveBeenCalledTimes(1)
   })
 
+  /*
+  * Test simulated click events
+  */
+  it('simulates click events', () => {
+    const onLinkClick = sinon.spy()
+    const output = shallow(
+      <Link title="mockTitle" url="mockUrl" onLinkClick={onLinkClick} />
+    )
+    output.simulate('click')
+    expect(onLinkClick.calledOnce).toEqual(true)
+  })
 })
