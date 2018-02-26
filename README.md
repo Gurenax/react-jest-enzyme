@@ -123,6 +123,17 @@ it('renders correctly', () => {
 })
 ```
 
+### Test by rendering through mounting
+```javascript
+it('always renders a div', () => {
+  const output = mount(
+    <App />
+  )
+  const divs = output.find('div')
+  expect(divs.length).toBeGreaterThan(0)
+})
+```
+
 ### Test when state changes with standard event
 ```javascript
 it('changes the state when button is clicked', () => {
