@@ -1,4 +1,4 @@
-# React Jest Enzyme
+# React Unit Tests with Jest, Enzyme and Sinon
 
 ## Install Enzyme
 - a testing utility for React
