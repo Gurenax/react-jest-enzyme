@@ -11,4 +11,15 @@ describe('Link', () => {
     )
     expect(shallowToJson(output)).toMatchSnapshot()
   })
+
+  it('should handle the click event', () => {
+    window.alert = jest.fn()
+    const output = shallow(
+      <Link title="mockTitle" url="mockUrl" />
+    )
+    output.simulate('click')
+    expect(window.alert).toHaveBeenCalledWith('Clicked!')
+  })
+
+  
 })
