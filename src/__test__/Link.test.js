@@ -55,7 +55,7 @@ describe('Link', () => {
   })
 
   /*
-  * Test events
+  * Test window events
   */
   it('handles the click event and calls a window.alert', () => {
     window.alert = jest.fn()
