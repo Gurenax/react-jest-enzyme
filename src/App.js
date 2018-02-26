@@ -6,12 +6,13 @@ import './App.css'
 import Link from './components/Link'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
+  // constructor(props) {
+  //   super(props)
 
-    this.state = {
-      clicked: false
-    }
+  //   this.
+  // }
+  state = {
+    clicked: false
   }
 
   onLinkClick = () => {
@@ -21,8 +22,6 @@ class App extends Component {
   }
   
   render() {
-    const { clicked } = this.state
-
     return (
       <div className="App">
         <h1>React Jest Enzyme</h1>

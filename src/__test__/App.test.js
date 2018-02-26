@@ -29,7 +29,7 @@ describe('App', () => {
   })
 
   /*
-  *   Test when state changes with custom event
+  *   Test when state changes with custom event 'onLinkClick'
   */
   it('changes the state when Link is clicked', () => {
     const output = shallow(<App />)

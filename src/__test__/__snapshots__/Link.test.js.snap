@@ -1,10 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Link should render correctly 1`] = `
-<a
-  href="mockUrl"
-  onClick={[Function]}
+exports[`Link renders correctly 1`] = `
+<div
+  className="output-area"
 >
-  mockTitle
-</a>
+  <h2>
+    A link to 
+    mockTitle
+  </h2>
+  <a
+    href="mockUrl"
+    onClick={[Function]}
+  >
+    mockTitle
+  </a>
+</div>
 `;
