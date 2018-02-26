@@ -16,6 +16,16 @@ it('renders without crashing', () => {
 describe('App', () => {
 
   /*
+  * Test by matching a snapshot
+  */
+  it('renders correctly', () => {
+    const output = shallow(
+      <App />
+    )
+    expect(shallowToJson(output)).toMatchSnapshot()
+  })
+
+  /*
   *   Test when state changes with standard event
   */
   it('changes the state when button is clicked', () => {
