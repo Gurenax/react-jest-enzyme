@@ -29,7 +29,7 @@ describe('Link', () => {
   })
 
   /*
-  *   Test by exact html
+  *   Test by expecting exact html
   */
   it('renders the Link output area', () => {
     const output = shallow(<Link title='Google' url='http://www.google.com'/>)
