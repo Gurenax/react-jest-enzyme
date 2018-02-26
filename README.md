@@ -148,3 +148,10 @@ it('changes the state when Link is clicked', () => {
   expect(output.state().clicked).toEqual(true)
 })
 ```
+
+## Disable jsdom in package.json if not needed
+- If not using jsdom (e.g. document, window), tests will run faster when it's disabled
+```javascript
+// "test": "react-scripts test --env=jsdom",
+"test": "react-scripts test",
+```
